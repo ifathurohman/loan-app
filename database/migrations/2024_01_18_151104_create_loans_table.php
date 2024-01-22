@@ -17,7 +17,10 @@ return new class extends Migration
             $table->unsignedInteger('term');
             $table->date('due_date');
             $table->string('state')->default('PENDING');
+            $table->unsignedBigInteger("user_id")->nullable(true);
             $table->timestamps();
+
+            $table->foreign("user_id")->on("users")->references("id");
         });
     }
 

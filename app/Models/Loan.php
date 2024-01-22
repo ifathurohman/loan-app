@@ -20,7 +20,7 @@ class Loan extends Model
         'term',
         'due_date',
         'state',
-        'scheduled_repayments',
+        'user_id',
     ];
 
     public function user(): BelongsTo

@@ -30,6 +30,9 @@ Route::middleware(\App\Http\Middleware\ApiAuthMiddleware::class)->group(function
     Route::post('/loans', [\App\Http\Controllers\LoanController::class, 'submitLoanRequest']);
     Route::get('/list-loans/{loanId?}', [\App\Http\Controllers\LoanController::class, 'listLoans']);
     Route::post('/repay-loan/{loanId}', [\App\Http\Controllers\LoanController::class, 'repayLoan']);
+    
+    Route::post('/loans/{loanId}/approve', [\App\Http\Controllers\LoanController::class, 'approveLoan']);
+    Route::get('/loans/{loanId}/details', [\App\Http\Controllers\LoanController::class, 'getLoanDetails']);
 
     Route::post('/contacts', [\App\Http\Controllers\ContactController::class, 'create']);
     Route::get('/contacts', [\App\Http\Controllers\ContactController::class, 'search']);

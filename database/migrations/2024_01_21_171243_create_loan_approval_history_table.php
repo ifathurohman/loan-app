@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('loan_approval_history', function (Blueprint $table) {
+        Schema::create('loan_approval_histories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('loan_id');
             $table->unsignedBigInteger('user_id');

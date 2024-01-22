@@ -27,6 +27,11 @@ class User extends Model implements Authenticatable
         return $this->hasMany(Contact::class, "user_id", "id");
     }
 
+    public function loans(): HasMany
+    {
+        return $this->hasMany(Loan::class, "user_id", "id");
+    }
+
     public function getAuthIdentifierName()
     {
         return 'username';
